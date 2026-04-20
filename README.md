@@ -17,13 +17,32 @@ DVC ≠ TEMS TCL. 층위가 다르다:
 
 ## Install
 
-Claude Code 글로벌 스킬 설치:
+**Option A — 글로벌 스킬 (모든 프로젝트 공통):**
 
 ```bash
 git clone https://github.com/bobpullie/DVC.git "$HOME/.claude/skills/dvc"
 ```
 
+**Option B — 프로젝트 로컬 스킬 (특정 프로젝트만):**
+
+```bash
+cd <PROJECT_ROOT>
+git clone https://github.com/bobpullie/DVC.git .claude/skills/dvc
+```
+
 설치 후 `Skill` 도구에서 `dvc` 호출.
+
+## Updating
+
+```bash
+# Option A (global)
+git -C "$HOME/.claude/skills/dvc" pull origin main
+
+# Option B (project-local)
+git -C "<PROJECT_ROOT>/.claude/skills/dvc" pull origin main
+```
+
+누구든 upstream에 push → 모든 에이전트가 `git pull` 로 업데이트 수신.
 
 ## Structure
 

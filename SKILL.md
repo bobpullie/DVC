@@ -1,5 +1,7 @@
 ---
 name: dvc
+upstream: https://github.com/bobpullie/DVC
+update_cmd: git -C <INSTALL_DIR> pull origin main
 description: Deterministic Verification Checklist — 프로젝트별 결정론적 빌드 검증 프레임워크. 정적 분석 + 데이터 파일 검증 + 배포 정합성 점검을 하나의 checklist 시스템으로 통합. 누적 버그를 case로 일반화하여 회귀 방지. Use when — 신규 프로젝트에 build verification 시스템을 도입할 때, 반복 발생 버그를 일반화된 case로 등록할 때, CI/cron 용 결정론적 품질 게이트가 필요할 때, TEMS (LLM memory system) 와 구분되는 build-time 검증 레이어가 필요할 때.
 ---
 
