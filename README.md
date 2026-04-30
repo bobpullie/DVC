@@ -4,6 +4,21 @@
 
 **핵심 원칙:** 누적 버그를 **case로 일반화**하여 영구 회귀 방지 (Case Generalization).
 
+---
+
+## 5-Asset 4 원칙 (Independence + Local-Only + Separate-Repo + Universal Portability)
+
+본 자산은 Triad Chord Studio 5-Asset 체계 (**TEMS / SDC / DVC / TWK / handover**) 의 한 축. 다음 4 게이트 원칙을 모두 만족해야 canonical GitHub 레포에 push 허용:
+
+1. **Independence** — 5자산 상호 의존 0. DVC 는 TEMS / SDC / TWK / handover 미설치 환경에서도 self-contained 작동.
+2. **Local-Only** — DVC case (`cases.json`) 와 검증기 (`chk_*.py`) 는 각 프로젝트 `src/checklist/` 로컬 한정. hub 디렉토리 금지.
+3. **Separate-Repo** — 각 자산 별도 canonical 레포 보유. 한 PR 에 두 레포 묶지 않음.
+4. **Universal Portability** — Windows/Linux/macOS, 임의 OS user, 임의 에이전트명 작동. 절대경로/특정 user-name/hub 의존 금지 — DVC case `TEMS_PATH_ORPHAN_001` 가 위반 정적 검출.
+
+위반 발견 시 즉시 일반화 PR.
+
+---
+
 ## TEMS와의 구분
 
 DVC ≠ TEMS TCL. 층위가 다르다:
